@@ -1,0 +1,22 @@
+name: CI
+
+# Controls when the workflow will run
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # uses lean standard action
+      - uses: austinletson/lean-standard-action@develop
+        with:
+          # no test because using Mathlib toolchain which doesn't have "lake test"
+          test: false
+          mathlib-cache: true
+          lint-module: UseLeanStandardActionWithMathlib 
