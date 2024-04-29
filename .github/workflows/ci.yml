@@ -19,4 +19,3 @@ jobs:
           # no test because using Mathlib toolchain which doesn't have "lake test"
           test: false
           lint-module: UseLeanStandardActionWithMathlib
-          mathlib-cache: true
